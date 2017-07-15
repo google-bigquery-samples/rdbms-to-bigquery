@@ -1,0 +1,18 @@
+# @See https://github.com/embulk/embulk-input-jdbc/tree/master/embulk-input-mysql
+# @See https://github.com/embulk/embulk-output-bigquery
+
+in:
+{% include 'in/mysql' %}
+  select: "col1
+    , col2
+    , col3
+    , order_category
+    , order_date"
+  table: orders
+  where: "order_date >= TIMESTAMP('20170714')
+      AND order_date < TIMESTAMP('20170715')"
+
+out:
+{% include 'out/bigquery' %}
+  auto_create_table: true
+  table: orders_20170714

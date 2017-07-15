@@ -1,0 +1,18 @@
+# _bigquery.yml.liquid
+# @See https://github.com/embulk/embulk-output-bigquery
+
+  allow_quoted_newlines: true
+  auth_method: json_key
+  auto_create_gcs_bucket: false
+  auto_create_table: false
+  compression: GZIP
+  default_timezone: Asia/Seoul
+  dataset: ods3
+  gcs_bucket: dwprj1
+  job_status_polling_interval: 5
+  json_keyfile: dwprj1.json
+  mode: replace
+  path_prefix: log/dwprj1
+  project: dwprj1
+  service_account_email: google-bigquery-users@dwprj1.iam.gserviceaccount.com
+  type: bigquery
